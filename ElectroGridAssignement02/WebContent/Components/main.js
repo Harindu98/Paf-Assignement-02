@@ -71,16 +71,19 @@ function onItemSaveComplete(response, status) {
 
 
 // UPDATE==========================================
-$(document).on("click", ".btnUpdate", function(event) {
-			$("#hidIDSave").val( $(this).closest("tr").find('#hidIDUpdate').val());
-			$("#EMP_ID").val($(this).closest("tr").find('td:eq(0)').text());
-			$("#EMP_Name").val($(this).closest("tr").find('td:eq(1)').text());
-			$("#EMP_Number").val($(this).closest("tr").find('td:eq(2)').text());
-			$("#EMP_Deparment").val($(this).closest("tr").find('td:eq(3)').text());
-			$("#EMP_Email").val($(this).closest("tr").find('td:eq(4)').text());
-			$("#EMP_Age").val($(this).closest("tr").find('td:eq(5)').text());
-			$("#EMP_DOB").val($(this).closest("tr").find('td:eq(6)').text());
-		});
+
+			// UPDATE==========================================
+$(document).on("click", ".btnUpdate", function (event) {
+    $("#hidIDSave").val($(this).closest("tr").find('#hidIDUpdate').val());
+    $("#EMP_ID").val($(this).closest("tr").find('td:eq(0)').text());
+    $("#EMP_Name").val($(this).closest("tr").find('td:eq(1)').text());
+    $("#EMP_Age").val($(this).closest("tr").find('td:eq(2)').text());
+    $("#EMP_Deparment").val($(this).closest("tr").find('td:eq(3)').text());
+    $("#EMP_DOB").val($(this).closest("tr").find('td:eq(4)').text());
+    $("#EMP_Email").val($(this).closest("tr").find('td:eq(5)').text());
+    $("#EMP_Number").val($(this).closest("tr").find('td:eq(6)').text());
+});
+		
 
 
 // Delete============================================
@@ -88,7 +91,7 @@ $(document).on("click", ".btnRemove", function(event) {
 	$.ajax({
 		url : "PaymentApi",
 		type : "DELETE",
-		data : "EMP_ID=" + $(this).data("EMP_ID"),
+		data : "EMP_ID=" + $(this).attr("data-itemid"),
 		dataType : "text",
 		complete : function(response, status) {
 			onItemDeleteComplete(response.responseText, status);

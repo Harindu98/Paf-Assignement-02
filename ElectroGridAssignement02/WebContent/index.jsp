@@ -50,12 +50,10 @@
 			<input id="EMP_DOB" name="EMP_DOB" type="text" class="form-control form-control-sm">
 			
 			<br><br>
-			<input id="btnSave" name="btnSave" type="button" value="Register" class="btn btn-primary"> 
+			<input id="btnSave" name="btnSave" type="button" value="Save" class="btn btn-primary"> 
 			<input type="hidden" id="hidIDSave" name="hidIDSave" value="">
 			
-			<br>
-			<a href="home.jsp"><input type="button" value="Home page" class="btn btn-primary"></a>
-			<br>
+			
 			
 		</form>
 		
